@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../Media/Marvel.jpg);
+    background-size: 87%;
+}
+
+div{
+    position: relative;
+    width: 250px;
+    margin-left: 65px;
+    margin-top: 6vh;
+    transition: all .3s ease;
+    display: inline-block;
+    background-color: black;
+    border-radius: 1em;
+    height: 370px;
+}
+
+div img:first-child{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    height: 100%;
+
+}
+
+div img:last-child{
+    opacity: 0;
+    width: 280px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: all .3s ease;    
+    transform: translateY(25%);
+    margin: auto;
+    height: 70vh;
+}
+
+div:hover{
+    transform: 
+    /* Va emparejado con la rotacion en cuanto a parametros 3D */
+    perspective(250px)
+    rotateX(10deg)
+    translateZ(0)
+    /* Giro la imagen hacia atras */
+    translateY(-5%);
+}
+
+div::before{
+    content: '';
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 10% rgba(51,50,50,0.5) rgb(53,53,57)98%
+    );
+    opacity: 0;
+    transition: all .3s ease;
+    backdrop-filter: blur(1px);
+}
+
+div:hover::before{
+    opacity: 1;
+}
+
+div:hover img:last-child{
+    opacity: 1;
+}
+
+.a{
+    filter: drop-shadow(8px 18px 28px red);
+}
+.aa{
+    filter: drop-shadow(18px 18px 88px red);
+}
+
+.b{
+    filter: drop-shadow(10px 10px 10px white);
+}
+.bb{
+    filter: drop-shadow(18px 18px 88px red);
+}
+
+.c{
+    filter: drop-shadow(8px 18px 28px  yellow);
+
+}
+.cc{
+    filter: drop-shadow(18px 18px 88px red);
+    padding: 3px;
+}
+
+.d{
+    filter: drop-shadow(18px 100px 88px rgb(49, 49, 214) );
+}
+.dd{
+    filter: drop-shadow(18px 18px 88px red);
+}
+h1{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
